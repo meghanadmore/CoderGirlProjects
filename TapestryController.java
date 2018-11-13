@@ -44,13 +44,21 @@ public class TapestryController {
         }
     }
         public static void main(String[]args){
-        Pattern crossStitchWigglePat= new Pattern.CrossStitchWigglePattern();
+            Pattern crossStitchWigglePat= new Pattern.CrossStitchWigglePattern();
             crossStitchWigglePat.pattern();
-            printPattern(crossStitchWigglePat, 0.50);
+            printPattern(crossStitchWigglePat, 0.05);
             Pattern zigZagPat=new Pattern.ZigZagLinePattern();
             zigZagPat.pattern();
-            printPattern(zigZagPat,0.50);
-
+            printPattern(zigZagPat,0.00);
+            Pattern baublePat=new Pattern.BaublePattern();
+            baublePat.pattern();
+            printPattern(baublePat,0);
+            Pattern blockyBaublePat=new Pattern.BlockyBaublePattern();
+            blockyBaublePat.pattern();
+            printPattern(blockyBaublePat,0.10);
+            Pattern brokenWigglePat=new Pattern.BrokenWigglePattern();
+            brokenWigglePat.pattern();
+            printPattern(brokenWigglePat,0.40);
 
 
     }
