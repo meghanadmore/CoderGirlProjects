@@ -1,66 +1,35 @@
-package Tapestry;
-import java.util.Random;
+package Tapestries;
 
-import static Tapestry.Stitch.*;
+import java.util.ArrayList;
 
+import static java.lang.System.out;
 public class Pattern {
-    Stitch shortLine =new ShortLineStitch();
-    Stitch smallCross=new SmallCrossStitch();
-    Stitch largeCross=new LargeCrossStitch();
-    Stitch circle=new CircleStitch();
-    Stitch fill=new FillStitch();
-    Stitch block=new BlockStitch();
-    Stitch zigZag=new ZigZagStitch();
+    double jamRate;
+    ArrayList<Stitch> stitches=new ArrayList<Stitch>(6);
 
+    Stitch shortLineStitch =new Stitch();
+    Stitch smallCrossStitch=new SmallCrossStitch();
+    Stitch largeCrossStitch=new LargeCrossStitch();
+    Stitch circleStitch=new CircleStitch();
+    Stitch fillStitch=new FillStitch();
+    Stitch blockstitch=new BlockStitch();
+    Stitch zigZagStitch=new ZigZagStitch();
 
+    public void Pattern()
+    {
+stitches.add(shortLineStitch);
+stitches.add(largeCrossStitch);
+stitches.add(largeCrossStitch);
+stitches.add(circleStitch);
+stitches.add(fillStitch);
+stitches.add(blockstitch);
+stitches.add(zigZagStitch);
+    }
     public void pattern(){
 
-    }
-    public static class CrossStitchWigglePattern extends Pattern{
-        public void pattern(){
-            smallCross.sew();
-            largeCross.sew();
-
-        }
-    }
-    public static class ZigZagLinePattern extends Pattern{
-        public void pattern(){
-            for(int i=0;i<=2;i++){
-                zigZag.sew();
-            }
-            for(int i=0;i<=2;i++){
-                fill.sew();
-            }
-
-        }
-    }
-    public static class BaublePattern extends Pattern{
-        public void pattern(){
-            for(int i=0;i<=1;i++){
-                shortLine.sew();
-            }
-            circle.sew();
-        }
-    }
-    public static class BlockyBaublePattern extends Pattern{
-        public void pattern(){
-            block.sew();
-            for(int i=0;i<=2;i++){
-                fill.sew();
-            }
-            circle.sew();
-            for(int i=0;i<=2;i++){
-                fill.sew();
-            }
-        }
 
     }
-    public static class BrokenWigglePattern extends Pattern{
-        public void pattern(){
-            smallCross.sew();
-            largeCross.sew();
-        }
-    }
 
-    
+
+
 }

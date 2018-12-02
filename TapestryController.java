@@ -1,66 +1,50 @@
-package Tapestry;
+package Tapestries;
+
+import java.util.ArrayList;
 
 public class TapestryController {
-    private static void printPattern(Pattern pattern,double faiRate) {
-        boolean needleJam = (Math.random() < 0.40d);
-        if (needleJam) {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 8; j++) {
-                    pattern.pattern();
+    private ArrayList<Pattern> patternArrayList=new ArrayList<Pattern>();
+
+    public static void main(String[] args) {
+
+        TapestryController A = new TapestryController();
+
+
+        Pattern crossStitchWigglePattern  = new CrossStitchWigglePattern();
+        Pattern zigZagLinesPattern = new ZigZagLinesPattern();
+        Pattern baublePattern = new BaublePattern();
+        Pattern blockyBaublePattern = new BlockyBaublePattern();
+        Pattern brokenWigglePattern =new BrokenWigglePattern();
+        A.patternArrayList.add(crossStitchWigglePattern);
+        A.patternArrayList.add(zigZagLinesPattern);
+        A.patternArrayList.add(baublePattern);
+        A.patternArrayList.add(blockyBaublePattern);
+        A.patternArrayList.add(brokenWigglePattern);
+
+
+        if (A.patternArrayList.size() != 0) {
+            for (int i = 0; i < A.patternArrayList.size(); i++) {
+                for (int x = 0; x < 3; x++) {
+                    for (int y=0;y<8;y++) {
+                        A.patternArrayList.get(i).pattern();
+                        System.out.print(" ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
-            for (int n = 0; n < 3; n++) {
-                System.out.println();
-            }
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 6; j++) {
-                    pattern.pattern();
+                System.out.println("\n\n");
+                for (int x = 0; x < 8; x++) {
+                    for (int y=0;y<6;y++) {
+                        A.patternArrayList.get(i).pattern();
+                        System.out.print(" ");
+
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
-            for (int n = 0; n < 3; n++) {
-                System.out.println();
-            }
-        } else {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 4; j++) {
-                    pattern.pattern();
-                }
-                System.out.println();
-            }
-            for (int n = 0; n < 3; n++) {
-                System.out.println();
-            }
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 3; j++) {
-                    pattern.pattern();
-                }
-                System.out.println();
-            }
-            for (int n = 0; n < 3; n++) {
-                System.out.println();
+                System.out.println("\n");
             }
         }
-    }
-        public static void main(String[]args){
-            Pattern crossStitchWigglePat= new Pattern.CrossStitchWigglePattern();
-            crossStitchWigglePat.pattern();
-            printPattern(crossStitchWigglePat, 0.05);
-            Pattern zigZagPat=new Pattern.ZigZagLinePattern();
-            zigZagPat.pattern();
-            printPattern(zigZagPat,0.00);
-            Pattern baublePat=new Pattern.BaublePattern();
-            baublePat.pattern();
-            printPattern(baublePat,0);
-            Pattern blockyBaublePat=new Pattern.BlockyBaublePattern();
-            blockyBaublePat.pattern();
-            printPattern(blockyBaublePat,0.10);
-            Pattern brokenWigglePat=new Pattern.BrokenWigglePattern();
-            brokenWigglePat.pattern();
-            printPattern(brokenWigglePat,0.40);
-
 
     }
-
 }
+
+

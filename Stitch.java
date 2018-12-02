@@ -1,51 +1,12 @@
-package Tapestry;
-
+package Tapestries;
 public class Stitch {
-    public String stitch;
-    public void sew()
-    {
-        System.out.println(stitch);
+    protected String stitchType;
+
+    public void sew(){
+        System.out.print("  ");
     }
-    public static class ShortLineStitch extends Stitch {
-        public void sew() {
-            this.stitch = "-";
-            System.out.print(stitch);
-        }
+
+
+
     }
-    public static class SmallCrossStitch extends Stitch{
-        public void sew(){
-            this.stitch="x";
-            System.out.print(stitch);
-        }
-    }
-    public static class LargeCrossStitch extends Stitch{
-        public void sew(){
-            this.stitch="X";
-            System.out.print(stitch);
-        }
-    }
-    public static class CircleStitch extends Stitch{
-        public void sew(){
-            this.stitch="o";
-            System.out.print(stitch);
-        }
-    }
-    public static class FillStitch extends Stitch{
-        public void sew(){
-            this.stitch="=";
-            System.out.print(stitch);
-        }
-    }
-    public static class BlockStitch extends Stitch{
-        public void sew(){
-            this.stitch="[]";
-            System.out.print(stitch);
-        }
-    }
-    public static class ZigZagStitch extends Stitch{
-        public void sew(){
-            this.stitch="Z";
-            System.out.print(stitch);
-        }
-    }
-}
+
